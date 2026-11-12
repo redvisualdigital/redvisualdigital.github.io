@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Aurora · Centro</title>
+<meta name="description" content="Sobrancelha, maquiagem, penteado e cílios em Centro. Veja os preços e agende pelo WhatsApp.">
+<meta property="og:title" content="Studio Aurora · Centro">
+<meta property="og:description" content="Veja os serviços e os preços e agende pelo WhatsApp.">
+<meta property="og:image" content="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF6F1;--card:#FFFFFF;--line:#EADDD3;--gold:#C98B93;--gold2:#9E3D4B;--txt:#2B2222;--mut:#86766F;--ivory:#FFFFFF}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:Montserrat,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-style:italic;letter-spacing:0}
+.gold{color:var(--gold2)}
+.eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+/* topo */
+header{position:sticky;top:0;z-index:20;background:rgba(251,246,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.marca{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:1.3rem;color:var(--gold2);text-decoration:none;letter-spacing:.06em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold2);color:#fff;font-weight:700;text-decoration:none;border:0;border-radius:999px;padding:12px 22px;font-size:.92rem;cursor:pointer;font-family:inherit}
+.btn.sm{padding:9px 16px;font-size:.82rem}
+.btn.lin{background:none;border:1px solid var(--gold);color:var(--gold2)}
+/* hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:url(img/estudio.jpg) center 20%/cover}
+.hero .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,246,241,0) 0%,rgba(251,246,241,.55) 55%,var(--bg) 96%)}
+.hero .wrap{position:relative;padding-bottom:56px;padding-top:120px}
+.hero h1{font-size:clamp(2rem,8vw,3.6rem);line-height:1.08;margin:12px 0 14px;max-width:14ch}
+.hero p{color:var(--mut);max-width:38ch;margin-bottom:24px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.badges span{border:1px solid var(--line);background:rgba(255,255,255,.85);border-radius:999px;padding:6px 12px;font-size:.78rem;color:var(--mut)}
+.badges b{color:var(--txt);font-weight:600}
+section{padding:64px 0}
+.tit{margin-bottom:28px}
+.tit h2{font-size:clamp(1.5rem,5.4vw,2.2rem);margin-top:8px}
+/* profissionais */
+.pros{display:grid;gap:18px}
+@media(min-width:760px){.pros{grid-template-columns:1fr 1fr}}
+.pro{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.pro .foto{aspect-ratio:4/5;background:#000;position:relative;overflow:hidden}
+.pro .foto img{width:100%;height:100%;object-fit:cover}
+.pro .foto .tag{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.78rem}
+.pro .info{padding:18px}
+.pro h3{font-size:1.25rem}
+.pro p{color:var(--mut);font-size:.9rem;margin-top:4px}
+/* serviços */
+.cat{margin-top:34px}
+.cat h3{font-size:1.15rem;color:var(--gold2);padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.cat .quem{font-size:.78rem;color:var(--mut);margin-bottom:8px}
+.srv{display:flex;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.srv .n{font-weight:600}
+.srv .d{font-size:.8rem;color:var(--mut);margin-top:2px}
+.srv .p{font-weight:700;color:var(--gold2);white-space:nowrap}
+.tabela{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:4px}
+.tabela th{font-weight:600;color:var(--mut);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;text-align:right;padding:8px 0}
+.tabela th:first-child{text-align:left}
+.tabela td{padding:11px 0;border-bottom:1px dashed var(--line);text-align:right;color:var(--gold2);font-weight:700}
+.tabela td:first-child{text-align:left;color:var(--txt);font-weight:600}
+.nota{font-size:.8rem;color:var(--mut);margin-top:10px}
+.combo .p{font-weight:700;color:var(--gold2);white-space:nowrap}
+.combo{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;gap:12px;margin-top:10px}
+.faixa{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.faixa img{border-radius:14px;aspect-ratio:3/4;object-fit:cover;width:100%}
+/* agendar */
+.agenda{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
+.agenda label{display:block;font-size:.8rem;color:var(--mut);margin:16px 0 6px}
+.agenda input,.agenda select{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--txt);border-radius:12px;padding:12px;font:inherit;font-size:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{display:none}
+.chips label{margin:0;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:.82rem;color:var(--txt);cursor:pointer}
+.chips input:checked+label{background:var(--gold);border-color:var(--gold);color:#fff;font-weight:700}
+.total{display:flex;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-weight:700}
+.agenda .btn{width:100%;margin-top:18px;padding:15px}
+/* rodapé */
+.info-g{display:grid;gap:12px}
+@media(min-width:760px){.info-g{grid-template-columns:repeat(3,1fr)}}
+.info-g div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.info-g b{display:block;color:var(--gold2);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+footer{text-align:center;padding:40px 0 100px;color:var(--mut);font-size:.8rem}
+footer img{width:180px;margin:0 auto 14px;border-radius:12px}
+.flut{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+</style>
+</head>
+<body>
+
+<div style="background:var(--gold2);color:#fff;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:6px">Site demonstrativo · feito pela RedVisual</div><header><div class="wrap">
+  <a class="marca" href="#">STUDIO AURORA</a>
+  <a class="btn sm" href="#agendar">Agendar</a>
+</div></header>
+
+<div class="hero">
+  <div class="bg"></div>
+  <div class="wrap">
+    <div class="eyebrow">Studio Aurora · Centro</div>
+    <h1>Sua beleza com <span class="gold">cuidado de perto</span></h1>
+    <p>Sobrancelha, maquiagem, penteado e cílios. Veja os serviços, os preços e já escolha o seu horário pelo WhatsApp.</p>
+    <a class="btn" href="#agendar">Agendar meu horário</a>
+    <div class="badges">
+      <span><b>Brow</b> Lamination</span><span><b>Cílios</b> fio a fio e volume</span><span><b>Maquiagem</b> e penteado</span><span>Agenda pelo <b>WhatsApp</b></span>
+    </div>
+  </div>
+</div>
+
+<section id="quem"><div class="wrap">
+  <div class="tit"><div class="eyebrow">Quem atende</div><h2>Duas profissionais, <span class="gold">um só estúdio</span></h2></div>
+  <div class="pros">
+    <div class="pro">
+      <div class="foto"><img src="img/sobrancelha.jpg" alt="Maquiagem no Studio Aurora" style="object-position:center 30%"><span class="tag">Sobrancelha · Maquiagem · Penteado</span></div>
+      <div class="info"><h3>Bianca Lima</h3><p>Brow Lamination, design de sobrancelha, henna, maquiagem e penteado.</p></div>
+    </div>
+    <div class="pro">
+      <div class="foto"><img src="img/cilios.jpg" alt="Cílios e sobrancelha no Studio Aurora"><span class="tag">Cílios · Lash Lifting</span></div>
+      <div class="info"><h3>Júlia Souza</h3><p>Extensão de cílios em vários estilos e Lash Lifting.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="servicos" style="padding-top:20px"><div class="wrap">
+  <div class="tit"><div class="eyebrow">Serviços e preços</div><h2>Escolha o <span class="gold">seu cuidado</span></h2></div>
+
+  <div class="cat">
+    <h3>Sobrancelha</h3><div class="quem">com Bianca Lima</div>
+    <div class="srv"><div><div class="n">Brow Lamination</div><div class="d">60 min · retorno grátis em 30 dias</div></div><div class="p">R$ 120</div></div>
+    <div class="srv"><div><div class="n">Design com henna</div><div class="d">60 min</div></div><div class="p">R$ 40</div></div>
+    <div class="srv"><div><div class="n">Design natural</div><div class="d">40 min</div></div><div class="p">R$ 25</div></div>
+    <div class="srv"><div><div class="n">Buço</div><div class="d">+10 min</div></div><div class="p">R$ 10</div></div>
+  </div>
+
+  <div class="cat">
+    <h3>Maquiagem e penteado</h3><div class="quem">com Bianca Lima</div>
+    <div class="srv"><div><div class="n">Maquiagem</div><div class="d">90 min</div></div><div class="p">R$ 100</div></div>
+    <div class="srv"><div><div class="n">Penteado</div><div class="d">60 min</div></div><div class="p">R$ 100</div></div>
+    <div class="srv"><div><div class="n">Babyliss cabelo curto ou médio</div><div class="d">60 min</div></div><div class="p">R$ 40</div></div>
+    <div class="srv"><div><div class="n">Babyliss cabelo longo</div><div class="d">60 min</div></div><div class="p">R$ 60</div></div>
+    <div class="faixa"><img src="img/cilios.jpg" alt="Brow Lamination no estúdio"><img src="img/sobrancelha.jpg" alt="Produto usado no estúdio"></div>
+  </div>
+
+  <div class="cat">
+    <h3>Cílios</h3><div class="quem">com Júlia Souza</div>
+    <table class="tabela">
+      <tr><th>Estilo</th><th>Colocação</th><th>Manut. 20d</th><th>Manut. 30d</th></tr>
+      <tr><td>Fio U</td><td>140</td><td>75</td><td>95</td></tr>
+      <tr><td>Volume Brasileiro</td><td>120</td><td>75</td><td>95</td></tr>
+      <tr><td>Volume 4D</td><td>160</td><td>75</td><td>95</td></tr>
+      <tr><td>Volume 5D</td><td>140</td><td>75</td><td>95</td></tr>
+      <tr><td>Fox Eyes</td><td>170</td><td>75</td><td>95</td></tr>
+      <tr><td>Megafox</td><td>190</td><td>95</td><td>115</td></tr>
+    </table>
+    <div class="nota">Valores em reais. Colocação: 120 min. Manutenção de 20 dias: 60 min. Manutenção de 30 dias: 90 min.</div>
+    <div class="srv" style="margin-top:8px"><div><div class="n">Lash Lifting</div><div class="d">60 min · dura até 45 dias</div></div><div class="p">R$ 115</div></div>
+  </div>
+
+  <div class="cat">
+    <h3>Combos</h3><div class="quem">sobrancelha com a Bianca e cílios com a Júlia, no mesmo dia</div>
+    <div class="combo"><div class="n">Brow Lamination + Megafox</div><div class="p">R$ 240</div></div>
+    <div class="combo"><div class="n">Brow Lamination + Lash Lifting, Volume 5D ou Volume Brasileiro</div><div class="p">R$ 200</div></div>
+    <div class="combo"><div class="n">Design com henna + Lash Lifting, Volume 5D ou Volume Brasileiro</div><div class="p">R$ 130</div></div>
+  </div>
+</div></section>
+
+<section id="agendar" style="padding-top:20px"><div class="wrap">
+  <div class="tit"><div class="eyebrow">Agendamento</div><h2>Monte o seu <span class="gold">horário</span></h2></div>
+  <form class="agenda" id="form">
+    <label>Escolha os serviços</label>
+    <div class="chips" id="chips"></div>
+    <label for="nome">Seu nome</label>
+    <input id="nome" placeholder="Como você se chama?" autocomplete="name">
+    <label for="dia">Dia que você prefere</label>
+    <input id="dia" type="date">
+    <label for="per">Período</label>
+    <select id="per"><option>Manhã</option><option>Tarde</option><option>Qualquer horário</option></select>
+    <div class="total"><span>Total estimado</span><span id="tot" class="gold">R$ 0</span></div>
+    <button class="btn" type="submit">Enviar pedido pelo WhatsApp</button>
+  </form>
+</div></section>
+
+<section style="padding-top:10px"><div class="wrap">
+  <div class="info-g">
+    <div><b>Endereço</b>Rua das Flores, 120 · Centro</div>
+    <div><b>Pagamento</b>Pix, dinheiro, crédito e débito</div>
+    <div><b>Instagram</b>@studioaurora.demo</div>
+  </div>
+</div></section>
+
+<footer><div>Studio Aurora · Centro</div></footer>
+<a class="btn flut" href="#agendar">Agendar</a>
+
+<script>
+// Número do estúdio: [PENDENTE] enquanto estiver vazio, o WhatsApp abre pra escolher o contato.
+const ZAP = '5537999924000';
+const S = [
+ ['Brow Lamination',120],['Design com henna',40],['Design natural',25],['Buço',10],
+ ['Maquiagem',100],['Penteado',100],['Babyliss curto/médio',40],['Babyliss longo',60],
+ ['Cílios Fio U',140],['Cílios Volume Brasileiro',120],['Cílios Volume 4D',160],['Cílios Volume 5D',140],
+ ['Cílios Fox Eyes',170],['Cílios Megafox',190],['Manutenção de cílios',null],['Lash Lifting',115]
+];
+const chips = document.getElementById('chips');
+S.forEach(([n,p],i)=>{chips.insertAdjacentHTML('beforeend',`<input type="checkbox" id="s${i}" value="${i}"><label for="s${i}">${n}${p?' · R$ '+p:''}</label>`)});
+const marcados=()=>[...chips.querySelectorAll('input:checked')].map(c=>S[c.value]);
+chips.addEventListener('change',()=>{document.getElementById('tot').textContent='R$ '+marcados().reduce((t,[,p])=>t+(p||0),0)});
+const dia=document.getElementById('dia');dia.min=new Date().toISOString().slice(0,10);
+document.getElementById('form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const s=marcados(); if(!s.length){alert('Escolha pelo menos um serviço.');return}
+  const nome=document.getElementById('nome').value.trim();
+  const d=dia.value?dia.value.split('-').reverse().join('/'):'a combinar';
+  const msg=`Olá, RedVisual! ${nome?'Meu nome é '+nome+'. ':''}Testei a agenda demo do Studio Aurora e escolhi:\n`+s.map(([n,p])=>`• ${n}${p?' (R$ '+p+')':''}`).join('\n')+`\nDia: ${d}\nPeríodo: ${document.getElementById('per').value}\n\nQuero uma agenda assim pro meu negócio!`;
+  window.open(`https://wa.me/${ZAP}?text=${encodeURIComponent(msg)}`,'_blank');
+});
+</script>
+</body>
+</html>

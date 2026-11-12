@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Playfair+Display:ital,wght@0,500;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF6F1;--card:#fff;--line:#EADDD3;--ac:#9E3D4B;--ac2:#C98B93;--txt:#2B2222;--mut:#86766F;--tit:'Cormorant Garamond'}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:Montserrat,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+header{position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;height:58px;padding:0 18px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.marca{font-family:var(--tit);font-style:italic;font-weight:600;font-size:1.45rem;color:var(--ac)}
+.cart{position:relative;width:38px;height:38px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:1.05rem}
+.cart b{position:absolute;top:-3px;right:-3px;background:var(--ac);color:#fff;font-size:.62rem;width:17px;height:17px;border-radius:50%;display:grid;place-items:center}
+.hero{position:relative;height:250px;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,.45))}
+.hero .tx{position:absolute;left:18px;bottom:18px;right:18px;color:#fff;z-index:2}
+.hero small{font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;opacity:.9}
+.hero h1{font-family:var(--tit);font-weight:500;font-style:italic;font-size:2rem;line-height:1.05;margin-top:6px}
+.busca{margin:16px 18px 0;background:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font-size:.82rem;color:var(--mut)}
+.chips{display:flex;gap:8px;overflow:auto;padding:14px 18px 4px}
+.chips span{flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:.76rem;color:var(--mut)}
+.chips span.on{background:var(--ac);border-color:var(--ac);color:#fff}
+h2{font-family:var(--tit);font-style:italic;font-weight:600;font-size:1.5rem;margin:18px 18px 10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 18px}
+.p{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(80,40,40,.06)}
+.p .f{aspect-ratio:1/1;background:#eee}
+.p .i{padding:10px 12px 12px}
+.p .n{font-size:.8rem;font-weight:500;line-height:1.25}
+.p .v{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+.p .v b{color:var(--ac);font-size:.92rem}
+.p .v span{width:26px;height:26px;border-radius:50%;background:var(--ac);color:#fff;display:grid;place-items:center;font-size:1rem}
+.p .tag{position:absolute}
+/* detalhe */
+.det{display:none;position:fixed;inset:0;z-index:20;background:var(--bg);overflow:auto}
+.det.on{display:block}
+.det .f{height:360px;position:relative}
+.det .x{position:absolute;top:14px;left:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center}
+.det .c{padding:20px 18px 120px;margin-top:-22px;position:relative;background:var(--bg);border-radius:22px 22px 0 0}
+.det h3{font-family:var(--tit);font-style:italic;font-weight:600;font-size:1.8rem;line-height:1.1}
+.det p{color:var(--mut);font-size:.82rem;line-height:1.5;margin-top:8px}
+.det .lab{margin-top:18px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.ops{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.ops span{border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 14px;font-size:.8rem}
+.ops span.on{border-color:var(--ac);color:var(--ac);background:#fff5f6;font-weight:600}
+.preco{margin-top:18px;font-family:var(--tit);font-size:2rem;color:var(--ac);font-weight:600}
+.bar{position:fixed;left:12px;right:12px;bottom:14px;z-index:30;background:var(--ac);color:#fff;border-radius:18px;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 10px 30px rgba(120,30,40,.3)}
+.bar small{display:block;font-size:.66rem;opacity:.85;letter-spacing:.06em}
+.bar b{font-size:1.05rem}
+.bar .go{background:#fff;color:var(--ac);border-radius:999px;padding:9px 14px;font-weight:600;font-size:.78rem}
+.wa{background:#25D366!important;color:#fff!important}
+</style>
+</head>
+<body>
+<div id="demo" style="background:var(--ac);color:#fff;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:6px">Catálogo demonstrativo · feito pela RedVisual</div><header><div class="marca" id="marca"></div><div class="cart">🛍<b id="qt">0</b></div></header>
+<div class="hero"><img id="heroimg"><div class="tx"><small id="herosm"></small><h1 id="heroh"></h1></div></div>
+<div class="busca">🔍 &nbsp;O que você procura?</div>
+<div class="chips" id="chips"></div>
+<h2 id="h2"></h2>
+<div class="grid" id="grid"></div>
+<div style="height:110px"></div>
+<div class="det" id="det"><div class="f"><img id="dimg"><div class="x" id="voltar">←</div></div><div class="c"><h3 id="dn"></h3><p id="dd"></p><div class="lab" id="dlab"></div><div class="ops" id="dops"></div><div class="preco" id="dp"></div><div id="add" style="margin-top:22px;background:var(--ac);color:#fff;text-align:center;border-radius:16px;padding:15px;font-weight:600;font-size:.92rem;cursor:pointer">Adicionar ao pedido</div></div></div>
+<div class="bar" id="bar" style="display:none"><div><small id="bs"></small><b id="bt"></b></div><div class="go" id="bgo">Enviar pedido</div></div>
+<script>
+const C = {
+ doceria:{marca:'Doce de Quina',ac:'#8C4A3A',ac2:'#D9A88A',bg:'#FBF4EC',hero:'../img/doce-hero.jpg',hsm:'Confeitaria artesanal',hh:'Doces feitos<br>com carinho',chips:['Todos','Brigadeiros','Bolos','Presentes'],h2:'Mais pedidos',
+  itens:[['Caixa de brigadeiros gourmet','../img/doce-1.jpg','Caixa',['6 unidades','12 unidades','24 unidades'],[24,44,82],'Brigadeiros de chocolate belga, ninho e pistache, enrolados no dia.'],['Bolo na taça de morango','../img/doce-2.jpg','Tamanho',['Individual','Para 2'],[18,32],'Massa fofinha, creme de ninho e morangos frescos.'],['Bolo de cenoura com brigadeiro','../img/doce-3.jpg','Tamanho',['Fatia','Inteiro P','Inteiro G'],[12,65,95],'O clássico de vó com cobertura generosa.'],['Kit presente','../img/doce-4.jpg','Kit',['Pequeno','Grande'],[59,99],'Caixa decorada com doces sortidos e cartão.']]},
+ semijoias:{marca:'Maré Semijoias',ac:'#9A7B4F',ac2:'#D8C3A0',bg:'#FAF7F2',hero:'../img/semi-hero.jpg',hsm:'Semijoias banhadas a ouro 18k',hh:'Brilho para<br>todos os dias',chips:['Todos','Colares','Brincos','Anéis'],h2:'Novidades',
+  itens:[['Colar ponto de luz','../img/semi-1.jpg','Comprimento',['40 cm','45 cm'],[89,95],'Banho de ouro 18k, zircônia cravejada.'],['Argola média lisa','../img/semi-2.jpg','Tamanho',['P','M','G'],[69,79,89],'Leve e confortável para o dia a dia.'],['Anel solitário','../img/semi-3.jpg','Aro',['14','16','18'],[79,79,79],'Pedra central em zircônia, aro ajustado.'],['Pulseira riviera','../img/semi-4.jpg','Cor',['Dourada','Prata'],[129,129],'Fileira de pedras com fecho gaveta.']]},
+ moda:{marca:'Rua de Linho',ac:'#6B6247',ac2:'#CFC3A6',bg:'#F7F4EE',hero:'../img/moda-hero.jpg',hsm:'Moda feminina · nova coleção',hh:'Leveza que<br>veste bem',chips:['Todos','Calças','Camisas','Vestidos'],h2:'Coleção Areia',
+  itens:[['Calça pantalona de linho','../img/moda-1.jpg','Tamanho',['P','M','G'],[149,149,149],'Cintura alta, caimento fluido. Cores areia e oliva.'],['Camisa de linho','../img/moda-2.jpg','Tamanho',['P','M','G'],[129,129,129],'Manga longa, botões de madrepérola.'],['Regata canelada','../img/moda-3.jpg','Cor',['Off-white','Caramelo','Preta'],[59,59,59],'Malha canelada que não marca.'],['Vestido midi','../img/moda-4.jpg','Tamanho',['P','M','G'],[169,169,169],'Alças finas e fenda lateral.']]},
+ perfumaria:{marca:'Casa Âmbar',ac:'#7A2E3A',ac2:'#D7A67B',bg:'#FAF5EF',hero:'../img/perf-hero.jpg',hsm:'Perfumaria fina',hh:'Um perfume<br>pra cada momento',chips:['Todos','Femininos','Body splash','Kits'],h2:'Queridinhos',
+  itens:[['Brisa Cítrica','../img/perf-1.jpg','Frasco',['30 ml','50 ml','100 ml'],[69,99,159],'Notas de bergamota, flor de laranjeira e almíscar.'],['Flor de Chá','../img/perf-2.jpg','Frasco',['50 ml','100 ml'],[109,169],'Chá branco, peônia e baunilha suave.'],['Madeira Clara','../img/perf-3.jpg','Frasco',['50 ml','100 ml'],[119,179],'Sândalo, âmbar e um toque de rosa.'],['Body splash Algodão','../img/perf-4.jpg','Tamanho',['200 ml'],[49],'Frescor de roupa limpa para o dia todo.']]}
+};
+const q = new URLSearchParams(location.search);
+var k = q.get('m') || 'semijoias', c = C[k];
+const r = document.documentElement.style; r.setProperty('--ac', c.ac); r.setProperty('--ac2', c.ac2); r.setProperty('--bg', c.bg);
+document.title = c.marca; marca.textContent = c.marca; heroimg.src = c.hero; herosm.textContent = c.hsm; heroh.innerHTML = c.hh; h2.textContent = c.h2;
+chips.innerHTML = c.chips.map((t, i) => `<span class="${i ? '' : 'on'}">${t}</span>`).join('');
+var fmt = v => 'R$ ' + v.toFixed(2).replace('.', ',');
+grid.innerHTML = c.itens.map((p, i) => `<div class="p" onclick="abre(${i})"><div class="f"><img src="${p[1]}"></div><div class="i"><div class="n">${p[0]}</div><div class="v"><b>${p[4].length > 1 && p[4][0] !== p[4][1] ? 'a partir de ' : ''}${fmt(p[4][0])}</b><span>+</span></div></div></div>`).join('');
+var sel = 0, cur = 0;
+function abre(i, o = 0) { cur = i; sel = o; const p = c.itens[i]; det.classList.add('on'); dimg.src = p[1]; dn.textContent = p[0]; dd.textContent = p[5]; dlab.textContent = p[2]; desenha(); }
+function desenha() { const p = c.itens[cur]; dops.innerHTML = p[3].map((t, j) => `<span class="${j === sel ? 'on' : ''}" onclick="sel=${j};desenha()">${t}</span>`).join(''); dp.textContent = fmt(p[4][sel]); }
+function carrinho(i, o) { const p = c.itens[i]; qt.textContent = '1'; bar.style.display = 'flex'; bs.textContent = '1 item · ' + p[0] + ' · ' + p[3][o]; bt.textContent = fmt(p[4][o]); }
+// estados pra print: ?m=doceria&s=lista|det|cart|wa
+const s = q.get('s') || 'lista', it = +(q.get('i') || 0), op = +(q.get('o') || 0);
+if (s === 'det' || s === 'cart' || s === 'wa') abre(it, op);
+if (s === 'cart' || s === 'wa') carrinho(it, op);
+if (s === 'wa') { bgo.textContent = 'Pedir no WhatsApp'; bgo.classList.add('wa'); }
+// pedido de verdade (fora dos estados de print)
+const ZAP = '5537999924000';
+var pedido = [];
+function atualiza() { const n = pedido.length, tot = pedido.reduce((t, x) => t + x.v, 0); qt.textContent = n; if (!n) { bar.style.display = 'none'; return; } bar.style.display = 'flex'; bs.textContent = n + (n > 1 ? ' itens' : ' item') + ' no pedido'; bt.textContent = fmt(tot); bgo.textContent = 'Pedir no WhatsApp'; bgo.classList.add('wa'); }
+voltar.onclick = () => det.classList.remove('on');
+add.onclick = () => { const p = c.itens[cur]; pedido.push({n: p[0], o: p[3][sel], v: p[4][sel]}); det.classList.remove('on'); atualiza(); };
+bgo.onclick = () => { if (!pedido.length) return; const NL = String.fromCharCode(10); const tot = pedido.reduce((t, x) => t + x.v, 0); const msg = 'Olá, RedVisual! Testei o catálogo demo da ' + c.marca + ' e montei este pedido:' + NL + pedido.map(x => '• ' + x.n + ' (' + x.o + ') ' + fmt(x.v)).join(NL) + NL + 'Total: ' + fmt(tot) + NL + NL + 'Quero um catálogo assim pro meu negócio!'; window.open('https://wa.me/' + ZAP + '?text=' + encodeURIComponent(msg), '_blank'); };
+if (s === 'lista') { /* nada */ }
+</script>
+</body>
+</html>
